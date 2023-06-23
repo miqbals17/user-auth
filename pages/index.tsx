@@ -6,6 +6,9 @@ export default function Home() {
   return (
     <>
       <Header current='Beranda'/>
+      <main>
+        Tes 123
+      </main>
     </>
   )
 }
