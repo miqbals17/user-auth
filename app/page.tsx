@@ -1,10 +1,13 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Header from '@/components/Header/Header'
+import Metadata from '@/components/Head/metadata'
 
 export default function Home() {
   return (
     <>
+      <Metadata title='Base' />
+      <Header />
       <main className={styles.main}>
         <div className={styles.description}>
           <p>

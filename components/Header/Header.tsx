@@ -20,7 +20,7 @@ export default function Header() {
         ))}
       </nav>
       <div className='transition duration-500 hover:translate-x-1 hover:bg-gray-900 rounded-lg p-2'>
-        <Link href='/login' className='font-bold text-white'>Login <span>&#8594;</span></Link>
+        <Link href='/login' className='font-bold text-white' target='_blank'>Login <span>&#8594;</span></Link>
       </div>
     </header>
   )
