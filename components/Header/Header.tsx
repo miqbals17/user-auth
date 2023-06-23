@@ -12,18 +12,6 @@ const navigation = [
 export default function Header() {
   return (
     <header className='bg-gray-800 flex justify-between items-center h-16 p-10'>
-      <Disclosure as='button' className='sm:hidden'>
-        {({open}) => (
-          <>
-            <Disclosure.Button className='inline-flex rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white'>
-              {open ? <XMarkIcon className='block h-6 w-6' /> : <Bars3Icon className='block h-6 w-6'/>}
-            </Disclosure.Button>
-            <Disclosure.Panel>
-              Tes Disclosure
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
       <div>
         <Link href='/home'><Image src='/../public/logo.png' alt='LabQI-logo' width={45} height={45} /></Link>
       </div>
