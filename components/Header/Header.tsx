@@ -4,7 +4,7 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 interface Props {
-  current: String,
+  current?: String,
 }
 
 const navigation = [
@@ -15,7 +15,9 @@ const navigation = [
 
 export default function Header(props: Props) {
   navigation.map((item) => item.current = false);
-  navigation[navigation.findIndex((item) => (item.name === props.current))].current = true;
+  if (props.current) {
+    navigation[navigation.findIndex((item) => (item.name === props.current))].current = true;
+  }
 
   return (
     <>
@@ -50,7 +52,7 @@ export default function Header(props: Props) {
                     href={item.href}
                     className={`block rounded-md px-3 py-2 text-base font-medium ${item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}
                   >
-                      {item.name}
+                    {item.name}
                   </Disclosure.Button>
                 ))}
                 <Disclosure.Button as='a' href='/login' className='block px-3 py-2 text-base font-medium bg-white text-gray-900 rounded-md'>Masuk</Disclosure.Button>
