@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import Modal from "@/components/Modal";
 
 interface Data {
   email: string,
@@ -10,13 +12,22 @@ interface Data {
 }
 
 async function registerData(data: Data) {
-  const res = await fetch('http://localhost:5000/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
+  try {
+    const res = await fetch('http://localhost:5000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const response = await res.json();
+    return (response);
+
+  } catch (err: any) {
+    console.log(err.message);
+  }
+
 }
 
 export default function Register() {
@@ -27,9 +38,10 @@ export default function Register() {
   })
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     e.preventDefault();
-    console.log(formData);
+
+    const response = registerData(formData);
+
     router.push('/')
   }
 
