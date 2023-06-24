@@ -2,14 +2,14 @@ import Header from "@/components/Header/Header";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Login() {
+export default function Register() {
   return (
     <>
       <Header />
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
-          <Image className='mx-auto' src='/../public/logo.png' alt='LabQI-logo' height={75} width={75}/>
-          <h2 className="mt-10 text-center text-2xl font-bold text-gray-900 leading-9">Masuk ke Akun Anda!</h2>
+          <Image className='mx-auto' src='/../public/logo.png' alt='LabQI-logo' height={75} width={75} />
+          <h2 className="mt-10 text-center text-2xl font-bold text-gray-900 leading-9">Daftar Akun Baru</h2>
         </div>
 
         <div className="mt-10 sm:max-w-sm sm:mx-auto sm:w-full">
@@ -31,7 +31,7 @@ export default function Login() {
             <div>
               <button type="submit" className="w-full rounded-md bg-indigo-600 px-3 py-1.5 font-semibold text-white shadow-sm hover:bg-indigo-500">Login</button>
               <div className="mt-2">
-                <p>Pengguna Baru? <Link href='/register' className="text-indigo-600">Register</Link></p>
+                <p>Sudah Memiliki Akun? <Link href='/login' className="text-indigo-600">Login</Link></p>
               </div>
             </div>
           </form>
